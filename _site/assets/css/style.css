@@ -208,7 +208,7 @@ table td { border: 1px solid #e8e8e8; }
 @media screen and (max-width: 800px) { table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar; } }
 
 /** Site header */
-.site-header { border-top: 5px solid yellow; border-bottom: 1px solid #e8e8e8; min-height: 18.65px; line-height: 54px; position: relative; }
+.site-header { border-top: 5px solid #565656; border-bottom: 1px solid #e8e8e8; min-height: 18.65px; line-height: 54px; position: relative; }
 
 .site-title { font-size: 1.625rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 0; float: left; }
 
@@ -335,9 +335,9 @@ table td { border: 1px solid #e8e8e8; }
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (10px / 2)); } }
 
-.banner { height: 200px; width: 100%; background-color: #ffffff; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; text-align: center; }
+.banner { height: 200px; width: 100%; background-color: #30abfc; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; background-position: center; }
 
-body { padding-top: 100px; padding-bottom: 40px; }
+body { padding-top: 200px; padding-bottom: 40px; }
 
 a:link { color: black; }
 
@@ -352,6 +352,6 @@ a:active { color: black; }
 
 .postitem { background-image: url("../arrow.svg"); background-repeat: no-repeat; background-position: 0px 6px; padding-left: 20px; border-bottom: 2px solid #eeeeee; }
 
-.myfooter { height: 40px; width: 100%; background-color: #565656; background-repeat: no-repeat; position: fixed; bottom: 0; text-align: right; }
+.myfooter { height: 40px; width: 100%; background-color: #565656; background-image: url("../footer.png"); background-repeat: no-repeat; position: fixed; bottom: 0; text-align: right; }
 
 /*# sourceMappingURL=style.css.map */
