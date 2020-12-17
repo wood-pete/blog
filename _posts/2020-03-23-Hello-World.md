@@ -4,6 +4,8 @@ title: "Hello World"
 ---
 
 Hello World!
+This is the introduction 
+<!--more-->
 
 <video
     id="my-video"
