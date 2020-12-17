@@ -255,17 +255,19 @@
 .post-content {
   margin-bottom: $spacing-unit;
   a:link, a:visited, a:active {
-    color: yellow;
-    background-color: black;
+    color: black;
+    background-color: rgb(48, 171, 252);
     border-radius: 25px;
     padding: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
     border: thin solid black;
     text-decoration: none;
   }
 
   a:hover {
-    color: black;
-    background-color: yellow;
+    background-color: black;
+    color: rgb(48, 171, 252);
   }
 
   h1, h2, h3 { margin-top: $spacing-unit * 2 }
