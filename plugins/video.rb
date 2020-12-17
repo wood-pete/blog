@@ -4,7 +4,7 @@ class Video < Liquid::Tag
     def initialize(tagName, markup, tokens)
       super
   
-      @url = Jekyll.configuration({})['url'] || 'http://petes.cloud'
+      @url = Jekyll.configuration({})['url'] || 'https://petes.cloud'
   
       if markup =~ Syntax then
         @id = $1
