@@ -335,7 +335,7 @@ table td { border: 1px solid #e8e8e8; }
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (10px / 2)); } }
 
-.banner { height: 100px; width: 100%; background-color: black; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; }
+.banner { height: 100px; width: 100%; background-color: #565656; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; }
 
 body { padding-top: 100px; padding-bottom: 40px; }
 
@@ -352,6 +352,6 @@ a:active { color: black; }
 
 .postitem { background-image: url("../arrow.svg"); background-repeat: no-repeat; background-position: 0px 6px; padding-left: 20px; border-bottom: 2px solid #eeeeee; }
 
-.myfooter { height: 40px; width: 100%; background-color: black; background-image: url("../footer.png"); background-repeat: no-repeat; position: fixed; bottom: 0; text-align: right; }
+.myfooter { height: 40px; width: 100%; background-color: #565656; background-repeat: no-repeat; position: fixed; bottom: 0; text-align: right; }
 
 /*# sourceMappingURL=style.css.map */
