@@ -335,7 +335,7 @@ table td { border: 1px solid #e8e8e8; }
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (10px / 2)); } }
 
-.banner { height: 100px; width: 100%; background-color: #ffffff; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; }
+.banner { height: 200px; width: 100%; background-color: #ffffff; background-image: url("../mybanner.png"); background-repeat: no-repeat; position: fixed; top: 0; text-align: center; }
 
 body { padding-top: 100px; padding-bottom: 40px; }
 
