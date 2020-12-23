@@ -1,38 +1,23 @@
----
-layout: post
-title: "Hello World"
-tags: [web, jekyll]
----
-
-ed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dweded
-<img align="left" style="margin-right:10px" src="/assets/postimages/books.jpg">
-ed  de de e dwe dw dwe dweewdew we dweded ed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dwededed  de de e dwe dw dwe dweewdew we dweded
+I"Ò<p><img src="/assets/postimages/books.jpg" alt="" /> Hello World!
+This is the introduction 
 <!--more-->
+ed  de de e dwe dw dwe dweewdew we dweded
+<img align="right" src="/assets/postimages/books.jpg" />ede ed wed wed wed ewd</p>
 
-
-<video
-    id="my-player"
-    class="video-js vjs-theme-sea"
-    controls
-    preload="auto"
-    width="640"
-    height="360"
-    poster="/assets/play.jpeg"
-    data-setup="{}"
-  >
+<video id="my-player" class="video-js vjs-theme-sea" controls="" preload="auto" width="640" height="360" poster="/assets/play.jpeg" data-setup="{}">
     <source src="/assets/video/hello.mp4" type="video/mp4" />
     <p class="vjs-no-js">
       To view this video please enable JavaScript, and consider upgrading to a
       web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
+      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
   </video>
-  <p><a href="/">This is home</a><p>
+<p><a href="/">This is home</a><p>
   <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
    <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p> <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
    <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p> <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
    <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p> <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
    <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p> <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
    <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>  <p> dekwhdew hwed owed weo wof ewfih woifh wof erof eof eof ueorf eorf jeor f</p>
+</p></p>
+:ET
