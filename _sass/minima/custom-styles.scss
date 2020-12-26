@@ -65,10 +65,20 @@ a:link {
   .myfooter {
     height: 40px;
     width: 100%;
+    padding-left: 50px;
+    line-height: 40px;
     background-color: #565656;
-    background-image: url("../footer.png");
+    background-image: url("/assets/twitter.png");
+    background-size: 30px 30px;
+    background-position: 10px 5px;
     background-repeat: no-repeat;
     position: fixed;
     bottom:0;
-    text-align: right;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.footertext {
+  color: white;
+  font-size: 15px;
 }
