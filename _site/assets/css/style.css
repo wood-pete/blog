@@ -335,14 +335,13 @@ table td { border: 1px solid #e8e8e8; }
 /** Grid helpers */
 @media screen and (min-width: 800px) { .one-half { width: calc(50% - (10px / 2)); } }
 
-.banner { height: 200px; width: 100%; background-color: #30abfc; background-image: url("../mybanner.png"); background-size: auto auto; background-repeat: no-repeat; position: fixed; top: 0; background-position: center; z-index: 99999999; border-bottom: 5px solid grey; }
+.banner { height: 200px; width: 100%; background-color: #30abfc; background-image: url("../mybanner.png"); background-size: auto auto; background-repeat: no-repeat; background-position: center; z-index: 99999999; border-bottom: 5px solid grey; }
 
 .bannerlink { display: block; width: 100%; height: 200px; }
 
-body { padding-top: 200px; padding-bottom: 40px; }
+body { padding-bottom: 40px; }
 
-@media only screen and (max-width: 400px) { body { padding-top: 100px; }
-  .banner { height: 100px; width: 100%; background-color: #30abfc; background-image: url("../mybanner.png"); background-size: 400px 133px; background-repeat: no-repeat; position: fixed; top: 0; background-position: center; z-index: 99999999; border-bottom: 5px solid grey; }
+@media only screen and (max-width: 600px) { .banner { height: 100px; width: 100%; background-color: #30abfc; background-image: url("../mybanner.png"); background-size: 400px 133px; background-repeat: no-repeat; background-position: center; z-index: 99999999; border-bottom: 5px solid grey; }
   .bannerlink { display: block; width: 100%; height: 100px; } }
 
 /* .banner { height: 200px; width: 100%; background-color: rgb(48, 171, 252); background-image: url("../mybanner.png"); background-size: 600px 200px; background-repeat: no-repeat; position: fixed; top:0; background-position: center;  z-index: 99999999; border-bottom: 5px solid grey } */
