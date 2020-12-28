@@ -11,9 +11,13 @@ Any views or opinions represented on the Website belong solely to the content cr
 
 ## Content and postings
 
-You may print a copy of any part of the Website and Services for your personal or non-commercial use.Compensation and sponsorship
+You may print a copy of any part of the Website and Services for your personal or non-commercial use.
 
-Some of the links on the Website may be "affiliate links". This means if you click on the link and purchase an item, the Operator will receive an affiliate commission.Indemnification and warranties
+## Compensation and sponsorship
+
+Some of the links on the Website may be "affiliate links". This means if you click on the link and purchase an item, the Operator will receive an affiliate commission.
+
+## Indemnification and warranties
 
 While we have made every attempt to ensure that the information contained on the Website is correct, the Operator is not responsible for any errors or omissions, or for the results obtained from the use of this information. All information on the Website is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied. In no event will the Operator, or its partners, employees or agents, be liable to you or anyone else for any decision made or action taken in reliance on the information on the Website, or for any consequential, special or similar damages, even if advised of the possibility of such damages. Information on the Website is for general information purposes only and is not intended to provide any type of professional advice. Please seek professional assistance should you require it. Furthermore, information contained on the Website and any pages linked to and from it are subject to change at any time and without warning.
 
