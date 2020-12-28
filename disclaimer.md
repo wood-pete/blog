@@ -4,15 +4,32 @@ title: Disclaimer
 permalink: /disclaimer/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# Disclaimer
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+This disclaimer ("Disclaimer") sets forth the general guidelines, disclosures, and terms of your use of the fiveminute.cloud website ("Website" or "Service") and any of its related products and services (collectively, "Services"). This Disclaimer is a legally binding agreement between you ("User", "you" or "your") and this Website operator ("Operator", "we", "us" or "our"). By accessing and using the Website and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Disclaimer. If you are entering into this Disclaimer on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this Disclaimer, in which case the terms "User", "you" or "your" shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this Disclaimer, you must not accept this Disclaimer and may not access and use the Website and Services. You acknowledge that this Disclaimer is a contract between you and the Operator, even though it is electronic and is not physically signed by you, and it governs your use of the Website and Services.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Representation
 
+Any views or opinions represented on the Website belong solely to the content creators and do not represent those of people, institutions or organizations that the Operator or creators may or may not be associated with in professional or personal capacity, unless explicitly stated. Any views or opinions are not intended to malign any religion, ethnic group, club, organization, company, or individual.
 
-[jekyll-organization]: https://github.com/jekyll
+## Content and postings
+
+You may print a copy of any part of the Website and Services for your personal or non-commercial use.Compensation and sponsorship
+
+Some of the links on the Website may be "affiliate links". This means if you click on the link and purchase an item, the Operator will receive an affiliate commission.Indemnification and warranties
+
+While we have made every attempt to ensure that the information contained on the Website is correct, the Operator is not responsible for any errors or omissions, or for the results obtained from the use of this information. All information on the Website is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied. In no event will the Operator, or its partners, employees or agents, be liable to you or anyone else for any decision made or action taken in reliance on the information on the Website, or for any consequential, special or similar damages, even if advised of the possibility of such damages. Information on the Website is for general information purposes only and is not intended to provide any type of professional advice. Please seek professional assistance should you require it. Furthermore, information contained on the Website and any pages linked to and from it are subject to change at any time and without warning.
+
+## Changes and amendments
+
+We reserve the right to modify this Disclaimer or its terms relating to the Website and Services at any time, effective upon posting of an updated version of this Disclaimer on the Website. When we do, we will revise the updated date at the bottom of this page. Continued use of the Website and Services after any such changes shall constitute your consent to such changes. Policy was created with https://www.WebsitePolicies.com
+
+## Acceptance of this disclaimer
+
+You acknowledge that you have read this Disclaimer and agree to all its terms and conditions. By accessing and using the Website and Services you agree to be bound by this Disclaimer. If you do not agree to abide by the terms of this Disclaimer, you are not authorized to access or use the Website and Services.
+
+## Contacting us
+
+If you would like to contact us to understand more about this Disclaimer or wish to contact us concerning any matter relating to it, you may send an email to contact@fiveminute.cloud
+
+### This document was last updated on December 28, 2020
