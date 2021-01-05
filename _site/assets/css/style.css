@@ -291,11 +291,13 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-content { margin-bottom: 10px; }
 
-.post-content a:link, .post-content a:active { color: black; background-color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
+.post-content a:link { color: black; background-color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
-.post-content a:hover { background-color: black; color: #30abfc; }
+.post-content a:visited { color: #30abfc; background-color: black; }
 
-.post-content a:visited { background-color: black; color: #30abfc; }
+.post-content a:hover { color: #30abfc; background-color: black; }
+
+.post-content a:active { color: #30abfc; background-color: black; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
 .post-content h1, .post-content h2, .post-content h3 { margin-top: 20px; }
 
@@ -370,7 +372,7 @@ a:active { color: #30abfc; }
 
 .myreadmore:active { color: #30abfc; background-color: black; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
-.myreadmore:visited { color: #30abfc; background-color: red; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
+.myreadmore:visited { color: #30abfc; background-color: black; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
 .myreadmore:link { background-color: black; color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
