@@ -36,8 +36,10 @@ layout: default
           {{ post.excerpt }}
         {%- endif -%}
         {% if post.excerpt != post.content %}
-          <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
+          <a class="myreadmore" href="{{ site.baseurl }}{{ post.url }}">Read more</a>
         {% endif %}
+      </br>
+      </br>
       </div>
       </li>
       {%- endfor -%}

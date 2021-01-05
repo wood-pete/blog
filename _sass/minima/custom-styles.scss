@@ -118,3 +118,36 @@ a:link {
   color: white;
   font-size: 15px;
 }
+
+.myreadmore {
+  color: black;
+  background-color: #30abfc;
+  border-radius: 25px;
+  padding: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: thin solid black;
+  text-decoration: none;
+}
+
+.myreadmore:visited {
+  color: black;
+  background-color: #30abfc;
+  border-radius: 25px;
+  padding: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: thin solid black;
+  text-decoration: none;
+}
+
+.myreadmore:hover {
+  background-color: black;
+  color: #30abfc;
+  border-radius: 25px;
+  padding: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: thin solid black;
+  text-decoration: none;
+}
