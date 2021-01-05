@@ -254,7 +254,7 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-  a:link {
+  a:link, a:visited, a:active  {
     color: black;
     background-color: rgb(48, 171, 252);
     border-radius: 25px;
@@ -264,28 +264,12 @@
     border: thin solid black;
     text-decoration: none;
   }
-  
-  a:visited {
-    color: rgb(48, 171, 252);
-    background-color: black;
-
-  }
 
   a:hover {
     color: rgb(48, 171, 252);
     background-color: black;
   }
   
-  a:active {
-    color: rgb(48, 171, 252);
-    background-color: black;
-    border-radius: 25px;
-    padding: 2px;
-    padding-left: 7px;
-    padding-right: 7px;
-    border: thin solid black;
-    text-decoration: none;
-  }
 
 
   h1, h2, h3 { margin-top: $spacing-unit * 2 }
