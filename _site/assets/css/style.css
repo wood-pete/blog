@@ -370,7 +370,7 @@ a:active { color: #30abfc; }
 
 .myreadmore:active { color: #30abfc; background-color: black; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
-.myreadmore:visited { color: #30abfc; background-color: black; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
+.myreadmore:visited { color: #30abfc; background-color: red; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
 .myreadmore:link { background-color: black; color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
