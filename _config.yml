@@ -3,7 +3,7 @@ author:
   name: Pete Wood
   email: pete@fiveminute.cloud
 description: > # this means to ignore newlines until "show_excerpts:"
-  Cloud | Technology | Healthcare
+  Healthcare Cloud Technology
 
 show_excerpts: true # set to true to show excerpts on the homepage
 excerpt_separator: <!--more-->
