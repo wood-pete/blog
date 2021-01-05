@@ -254,7 +254,7 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
-  a:link, a:visited, a:active {
+  a:link, a:active {
     color: black;
     background-color: rgb(48, 171, 252);
     border-radius: 25px;
@@ -266,6 +266,11 @@
   }
 
   a:hover {
+    background-color: black;
+    color: rgb(48, 171, 252);
+  }
+
+  a:visited {
     background-color: black;
     color: rgb(48, 171, 252);
   }
