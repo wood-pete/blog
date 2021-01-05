@@ -368,4 +368,8 @@ a:active { color: #30abfc; }
 
 .myreadmore:hover { background-color: black; color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
 
+.myreadmore:active { background-color: black; color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
+
+.myreadmore:link { background-color: black; color: #30abfc; border-radius: 25px; padding: 2px; padding-left: 7px; padding-right: 7px; border: thin solid black; text-decoration: none; }
+
 /*# sourceMappingURL=style.css.map */
