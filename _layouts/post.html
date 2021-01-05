@@ -26,8 +26,11 @@ layout: default
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
+      {%- endif -%}
+    | Reading time: 5 minutes</p>
   </header>
+
+  {% include share-buttons.html %}
 
   <div id="mycontent" class="post-content e-content" itemprop="articleBody">
     {{ content }}
