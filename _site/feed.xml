@@ -1,5 +1,259 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-06T10:46:16+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">5 Minute Cloud</title><subtitle>Healthcare Cloud Technology
-</subtitle><author><name>Pete Wood</name><email>pete@fiveminute.cloud</email></author><entry><title type="html">Five Healthcare Predictions for 2021</title><link href="http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021.html" rel="alternate" type="text/html" title="Five Healthcare Predictions for 2021" /><published>2021-01-04T00:00:00+00:00</published><updated>2021-01-04T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021</id><content type="html" xml:base="http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021.html">&lt;p&gt;Today is a momentous occasion.  At 7.30GMT, the retired maintenance manager Brian Pinker, 82, became the first patient to receive the Oxford-AstraZeneca vaccine.  The first vaccine that doesn’t require super-cold storage. The ‘2020 BC epoch’, as I like to call it (Before-COVID), showed how predictions are often wildly inaccurate, and subject to different realities yet to be imagined. But, in a 2021 AC era (After-COVID), with vaccines being rolled out across the UK, I feel confident enough to make a few predictions about what the rest of 2021 has install for us.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-13T17:03:34+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">5 Minute Cloud</title><subtitle>Healthcare Cloud Technology
+</subtitle><author><name>Pete Wood</name><email>pete@fiveminute.cloud</email></author><entry><title type="html">Creating a Cost of Care prediction with TensorFlow</title><link href="http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow.html" rel="alternate" type="text/html" title="Creating a Cost of Care prediction with TensorFlow" /><published>2021-01-11T00:00:00+00:00</published><updated>2021-01-11T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow</id><content type="html" xml:base="http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow.html">&lt;p&gt;I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. The conversation usually goes something like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Hey,  I’ve got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Great idea, have you got some data we can use to create a model?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What format is the data in? Is it AI-ready?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Eh, what? I’m sure we can just build a model with it.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s that word again.  Just.  The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with &lt;a href=&quot;https://to.fiveminute.cloud/1r2xMz&quot;&gt;TensorFlow&lt;/a&gt;, Google’s open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&quot;ingredients&quot;&gt;Ingredients&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Docker (I’m using version 3.0.3), but any recent version should be fine&lt;/li&gt;
+  &lt;li&gt;Jupyter Notebooks for Python coding&lt;/li&gt;
+  &lt;li&gt;Scikit-Learn for data normalization&lt;/li&gt;
+  &lt;li&gt;Matplotlib and Seaborn for visualisation&lt;/li&gt;
+  &lt;li&gt;TensorFlow for linear regression machine learning algorithm&lt;/li&gt;
+  &lt;li&gt;Flask for publishing the API.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These libraries will all be installed into the Docker container, which will be your local development environment.  You can watch the video below to follow along with the steps.
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6Zinxztsy5c&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;
+We will build our  model in four simple steps:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Step 1 - Build a TensorFlow sandpit environment&lt;/li&gt;
+  &lt;li&gt;Step 2 - Setup our Jupyter notebook&lt;/li&gt;
+  &lt;li&gt;Step 3 - Build and train our machine learning model using linear regression&lt;/li&gt;
+  &lt;li&gt;Step 4 - We will publish our prediction model through an API using Flask&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;requirements-and-using-the-code-from-github&quot;&gt;Requirements and using the code from GitHub&lt;/h2&gt;
+&lt;p&gt;The only thing you’ll need installed is Docker, and code can be downloaded from &lt;a href=&quot;https://to.fiveminute.cloud/ekxWeR&quot;&gt;GitHub&lt;/a&gt;. On GitHub you’ll see a number of helper commands to help things run smoothly.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;build&lt;/em&gt; contains the command to build the Docker container from the &lt;a href=&quot;https://github.com/fiveminutecloud/fmctensorflow/blob/main/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;run&lt;/em&gt; contains the commands to run our container, and also display the logs.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;cleanup&lt;/em&gt; will stop and delete the Docker container.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;logs&lt;/em&gt; will show the log files of the running container.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can copy the contents of GitHub to your local machine by running the &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;git&lt;/a&gt; command.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/fiveminutecloud/fmctensorflow.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;step-1---create-the-sandpit-environment&quot;&gt;Step 1 - Create the sandpit environment&lt;/h2&gt;
+&lt;p&gt;Now, there are a few ways you can get a sandpit environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example we’ll quickly make our own local environment. This helps us understand a little more about what’s going on, but is also means you can use data sets which you might not be comfortable sharing on the Cloud.&lt;/p&gt;
+
+&lt;p&gt;Our Dockerfile uses the standard python 3.7 base image from DockerHub, on which we layer Jupyter Notebooks, the TensorFlow machine learning libraries and the Flask libraries to publish our API.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Dockerfile&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-dockerfile highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; python:3.7-slim&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;apt-get update
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;scikit-learn&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;0.23.2
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;jupyterlab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;2.2.9
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;matplotlib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;3.3.3
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;seaborn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;0.11.0
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;numpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;1.18.5
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tensorflow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;2.3.1
+&lt;span class=&quot;k&quot;&gt;RUN &lt;/span&gt;pip3 &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;flask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;1.1.2
+&lt;span class=&quot;k&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt; [&quot;jupyter-lab&quot;, &quot;--ip=0.0.0.0&quot;, &quot;--allow-root&quot;, &quot;--notebook-dir=/notebooks&quot;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Build the Docker container using the command&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t fmctensorflow .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;step-2---setup-our-jupyter-notebook&quot;&gt;Step 2 - Setup our Jupyter Notebook&lt;/h2&gt;
+&lt;p&gt;Now you have a container image, you run it with the following command. This command creates an instance of the container, and opens two ports on the container. Port 8888 is opened so you can access Jupyter Notebooks through your web browser, and port 5000 is opened for the API which we’ll create shortly.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -v $(pwd)/notebooks:/notebooks --name fmctensorflow -p 8888:8888 -p 5000:5000 fmctensorflow:latest
+docker logs -f fmctensorflow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Within the logs, you should see a line which looks something like the line below. It contains the access token for the running instance of Jupyter, so you need that. Simply copy the whole line into your browser, to access the Notebook. I recommend using the last link which starts http://127.0.0.1.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html
+    Or copy and paste one of these URLs:
+        http://046ef7394882:8888/?token=9e976aecfb63ee81434e0272b4e996c130833ee891c91434e0272b4eaea6304e976aea8
+     or http://127.0.0.1:8888/?token=e976aecfb63ee81434e0272b4e996c130833ee891c91434e0272b4eaea6304e976aea8
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Now in your web browser, you should see &lt;em&gt;Launcher&lt;/em&gt;. Click the Python3 logo to create a new Notebook.  You can right-click the file created on the left to rename it. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-12-17-39-42.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;step-3---build-and-train-our-model&quot;&gt;Step 3 - Build and train our model&lt;/h2&gt;
+&lt;p&gt;You can view the actual Notebook &lt;a href=&quot;https://github.com/fiveminutecloud/fmctensorflow/blob/main/notebooks/fmctensorflow.ipynb&quot;&gt;here&lt;/a&gt;, but I’m going to summarize the eleven key steps below.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-import-the-libraries&quot;&gt;a. Import the libraries&lt;/h3&gt;
+&lt;p&gt;Here we import the libraries that were layered into the Docker container during step 1. You’ll notice we’re using some libraries which we didn’t explicitly include (eg. Pandas), but we can still use them because they are part of the base Python 3.7 container.&lt;/p&gt;
+
+&lt;h3 id=&quot;b-retrieve-the-data-set-for-training&quot;&gt;b. Retrieve the data set for training&lt;/h3&gt;
+&lt;p&gt;The dataset we use for training is a public dataset from &lt;a href=&quot;https://www.kaggle.com/mirichoi0218/insurance/home&quot;&gt;Kaggle&lt;/a&gt; with a small sample of USA population medical insurance costs. It has 1338 records, with columns as follows:
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Age&lt;/td&gt;
+      &lt;td&gt;Patient age&lt;/td&gt;
+      &lt;td&gt;Numeric&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sex&lt;/td&gt;
+      &lt;td&gt;Patient sex&lt;/td&gt;
+      &lt;td&gt;Text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BMI&lt;/td&gt;
+      &lt;td&gt;Patient body-mass index&lt;/td&gt;
+      &lt;td&gt;Numeric&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Children&lt;/td&gt;
+      &lt;td&gt;Number of children&lt;/td&gt;
+      &lt;td&gt;Numeric&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Smoker&lt;/td&gt;
+      &lt;td&gt;Is the patient a smoker?&lt;/td&gt;
+      &lt;td&gt;Text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Region&lt;/td&gt;
+      &lt;td&gt;Patient’s home region&lt;/td&gt;
+      &lt;td&gt;Text&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Charges&lt;/td&gt;
+      &lt;td&gt;Insurance costs&lt;/td&gt;
+      &lt;td&gt;Numeric&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;c-visualise-and-explore-the-data-with-matplotlib&quot;&gt;c. Visualise and explore the data with Matplotlib&lt;/h3&gt;
+&lt;p&gt;We are interested to understand the relationship between age and insurance costs. The following chart shows the distribution. Here we can see at least three linear relationships, so in the next step we’d like to understand the features that influence the insurance costs.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-13-13-20-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;d-map-the-textual-values-to-numerical-values&quot;&gt;d. Map the textual values to numerical values&lt;/h3&gt;
+&lt;p&gt;In order to understand the features that influence insurance costs, we need to delve deeper into the data. We’d like to look at creating a &lt;em&gt;correlation matrix&lt;/em&gt; to show how the costs change, as the features change. For example, do insurance costs go up as BMI increases?  How do the costs vary by region? 
+In order to do this analysis, we use a &lt;em&gt;Correlation&lt;/em&gt; function, but it only works with numeric data.  Therefore, we create three mapping functions to map Sex, Smoker and Region to numeric values, so we configure the following mappings. 
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+      &lt;th&gt;Text Values&lt;/th&gt;
+      &lt;th&gt;Numeric Values&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sex&lt;/td&gt;
+      &lt;td&gt;male, female, undefined&lt;/td&gt;
+      &lt;td&gt;0, 1, -1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Smoker&lt;/td&gt;
+      &lt;td&gt;no, yes, undefined&lt;/td&gt;
+      &lt;td&gt;0, 1, -1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Region&lt;/td&gt;
+      &lt;td&gt;southwest,southeast,northwest,northeast, undefined&lt;/td&gt;
+      &lt;td&gt;1, 2, 3, 4, 0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;e-look-at-the-correlation-between-data-items-with-pandas-and-seaborn&quot;&gt;e. Look at the &lt;em&gt;correlation&lt;/em&gt; between data items with Pandas and SeaBorn&lt;/h3&gt;
+&lt;p&gt;We use &lt;em&gt;Pandas&lt;/em&gt; to first create the Correlation matrix, and then we use &lt;em&gt;SeaBorn&lt;/em&gt; to visualise the matrix to see the hotspots. From the charts below, we see the factors influencing the insurance costs are smoker, and then age. 
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img src=&quot;../../../assets/myimages/2021-01-13-13-41-01.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;../../../assets/myimages/Sex.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;f-separate-the-smokers-from-the-nonsmokers&quot;&gt;f. Separate the Smokers from the Nonsmokers&lt;/h3&gt;
+&lt;p&gt;Since Smokers is a ‘yes/no’ value, in the next step we split the source data into Smokers and Nonsmokers so we can see the different trends. In the image below we can see the split of smokers and nonsmokers. We can see at least 3 linear relationships. We can see two for smokers (in grey), and a good linear relationship for nonsmokers (in blue) but with a sizable set of anomalies. So, for the rest of this adventure we’ll focus on the nonsmokers only. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-13-13-48-36.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;g-look-at-the-correlation-between-features-for-only-nonsmokers&quot;&gt;g. Look at the correlation between features for only Nonsmokers&lt;/h3&gt;
+&lt;p&gt;Now, we re-run the Correlation function for nonsmokers only, and we discover that age (unsurprisingly!) becomes the most significant factor in insurance charges.
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-13-13-54-06.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;h-normalize-the-input-values-with-scikit-learn&quot;&gt;h. Normalize the input values with Scikit-Learn&lt;/h3&gt;
+&lt;p&gt;We now need to prepare the data for training.  It is best practice to normalize the input values, and we do this by creating a &lt;em&gt;scaler&lt;/em&gt;.  The scaler is a function that condenses the input dataset (age) down to a unit range (between 0-1). If you don’t do this, you may find your modeling fit &lt;a href=&quot;https://machinelearningmastery.com/exploding-gradients-in-neural-networks/&quot;&gt;&lt;em&gt;explodes&lt;/em&gt;&lt;/a&gt;. You don’t need to normalize the output values (costs).
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-13-13-56-33.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;i-split-the-data-into-a-training-and-testing-dataset&quot;&gt;i. Split the data into a training and testing dataset&lt;/h3&gt;
+&lt;p&gt;There is one last thing needed before training the model. In step 3b, I noted we have 1338 records in our data set, of which 1064 are nonsmokers. We want to use most of the data for training the model. But, we also want to hold back some data so we can test the model afterwards and compare the predicted result with the actual result already known.  This helps us understand the accuracy of our model. We decide to train the model on 1010 (95%) nonsmokers, and hold back 54 records for testing later.&lt;/p&gt;
+
+&lt;h3 id=&quot;j-train-the-model-with-tensorflow&quot;&gt;j. Train the model with TensorFlow&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Finally!&lt;/em&gt; Eleven steps later, we can train our model with TensorFlow. TensorFlow works by creating &lt;em&gt;models&lt;/em&gt; and &lt;em&gt;layers&lt;/em&gt;. Models are made up of layers, and layers are the &lt;em&gt;functions&lt;/em&gt; containing the mathematical function. The power of TensorFlow allows you to build complex networks with multiple layers leading to very sophisticated prediction models. We will only create one &lt;a href=&quot;https://keras.io&quot;&gt;Keras&lt;/a&gt; layer.  The model fitting process is essentially &lt;em&gt;random&lt;/em&gt;.  And if you run the fitting process multiple times, you’ll get different results, unless you set the &lt;a href=&quot;https://machinelearningmastery.com/reproducible-results-neural-networks-keras/&quot;&gt;seed&lt;/a&gt; for the random number generator. Fitting basically selects a random position, and tests the training data against it.  It uses &lt;em&gt;Optimizers&lt;/em&gt; to determine the accuracy (or ‘loss’) of the prediction against the known outcome in the training set and adjusts the random position accordingly.  It’s like guessing a number between 1 and 100. You guess 50, I say lower. You guess 25, I say higher. Eventually you guess correctly. Sometimes you get lucky and it only takes a few guesses, other times it takes longer.  Each guess is called an &lt;em&gt;Epoch&lt;/em&gt;, and the more guesses you have the longer it takes, and the better the result. We’re using just 1000 epochs here. We’re only using 1064 records to train our model, and it works just fine locally. But what if you have millions, or billions of records. Well, TensorFlow scales crazy-well, and lots of the cloud providers, but especially &lt;a href=&quot;https://towardsdatascience.com/multi-worker-distributed-tensorflow-training-on-google-cloud-ai-platform-64b383341dd8&quot;&gt;Google Cloud AI&lt;/a&gt; support TensorFlow at scale. All this work allows us to run just three commands to train our model.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keras&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sequential&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keras&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;units&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;optimizer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'sgd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loss&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mean_squared_error'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epochs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shuffle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;verbose&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We wait a few minutes for the modelling to run, and what do we get for our trouble? We get an &lt;em&gt;in memory&lt;/em&gt; model that we can use for predictions. But first, let’s evaluate our model against the 54 records we held back in step 3i. We need to check the model makes reasonable predictions.&lt;/p&gt;
+
+&lt;h3 id=&quot;k-evaluate-the-model-with-the-remaining-data-set&quot;&gt;k. Evaluate the model with the remaining data set&lt;/h3&gt;
+&lt;p&gt;In this step we evaluate the model against the 54 records we held back.  We already know the insurance costs for these patients, so let’s see what the new prediction model gives. The green-dots show the actual costs recorded in the source data, but the red-crosses show the predicted costs. And it’s not too bad! Clearly, the test data has some anomalies, but remember in step 3g we choose to only focus on the patients &lt;em&gt;age&lt;/em&gt;.  We haven’t accounted for other features such as number of children, or BMI which may explain these deviations.&lt;/p&gt;
+
+&lt;p&gt;You may also notice that the &lt;em&gt;age&lt;/em&gt; axis is still normalized because our model was trained on normalized &lt;em&gt;age&lt;/em&gt; data. In the final step 4,  you’ll see how we publish the model as an API, and use the &lt;em&gt;Scaler&lt;/em&gt; from step 3h to normalize the age for which we want the insurance cost prediction. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-13-15-53-41.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;step-4---deploy-the-model-as-an-api-with-flask&quot;&gt;Step 4 - Deploy the model as an API with Flask&lt;/h2&gt;
+&lt;p&gt;We use the in-memory model created above, and create a web API around it so it can be used by mobile and web apps. We use Flask to create the API infrastructure, with one simple GET endpoint &lt;em&gt;predict&lt;/em&gt;, that takes &lt;em&gt;age&lt;/em&gt; as a single input value. When the container was started above in step 2, we opened port 5000 so we can access the Flask API though our web browser. We can now access the insurance cost predictor through one simple endpoint.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://localhost:5000/predict?age=45
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Remember, I said above the model works on a &lt;em&gt;normalized&lt;/em&gt; age value, so we simply use the same scaler from step 3h we created before to scale the age.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     scaler_input_array = np.array([[age,0]]) 
+     scaled_age = mm_scaler.transform(scaler_input_array)[0][0] 
+     cost_prediction = model.predict([scaled_age])[0][0]  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We then pass the &lt;em&gt;normalized&lt;/em&gt; age to the model predictor and return the insurance cost in the HTTP response.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;../../../assets/myimages/2021-01-12-18-32-30.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;if-you-run-into-problems&quot;&gt;If you run into problems&lt;/h2&gt;
+&lt;p&gt;I like testing ideas in a isolated container because it provides a nice clean working space with known libraries. Also, if you run into difficulties, you can simply hit &lt;em&gt;reset&lt;/em&gt; and start again from a known state. The container can be restarted by running the &lt;em&gt;cleanup&lt;/em&gt; commands:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker kill fmctensorflow
+docker rm fmctensorflow
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;You can then restart your container using the commands in step 2.&lt;/p&gt;
+
+&lt;p&gt;If you have any other difficulties, please comment below.&lt;/p&gt;</content><author><name>Pete Wood</name><email>pete@fiveminute.cloud</email></author><category term="healthcare" /><category term="cloud" /><summary type="html">I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. The conversation usually goes something like this. Hey, I’ve got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT. Great idea, have you got some data we can use to create a model? Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow. What format is the data in? Is it AI-ready? Eh, what? I’m sure we can just build a model with it. There’s that word again. Just. The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with TensorFlow, Google’s open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.</summary></entry><entry><title type="html">Five Healthcare Predictions for 2021</title><link href="http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021.html" rel="alternate" type="text/html" title="Five Healthcare Predictions for 2021" /><published>2021-01-04T00:00:00+00:00</published><updated>2021-01-04T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021</id><content type="html" xml:base="http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021.html">&lt;p&gt;Today is a momentous occasion.  At 7.30GMT, the retired maintenance manager Brian Pinker, 82, became the first patient to receive the Oxford-AstraZeneca vaccine.  The first vaccine that doesn’t require super-cold storage. The ‘2020 BC epoch’, as I like to call it (Before-COVID), showed how predictions are often wildly inaccurate, and subject to different realities yet to be imagined. But, in a 2021 AC era (After-COVID), with vaccines being rolled out across the UK, I feel confident enough to make a few predictions about what the rest of 2021 has install for us.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/myimages/2021predictions.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 

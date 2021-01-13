@@ -1,0 +1,231 @@
+I"xA<p>I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. The conversation usually goes something like this.</p>
+
+<p><em>Hey,  I’ve got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT.</em></p>
+
+<p><em>Great idea, have you got some data we can use to create a model?</em></p>
+
+<p><em>Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow.</em></p>
+
+<p><em>What format is the data in? Is it AI-ready?</em></p>
+
+<p><em>Eh, what? I’m sure we can just build a model with it.</em></p>
+
+<p>There’s that word again.  Just.  The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with <a href="https://to.fiveminute.cloud/1r2xMz">TensorFlow</a>, Google’s open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.</p>
+
+<!--more-->
+
+<h2 id="ingredients-you-will-use">Ingredients you will use:</h2>
+<ul>
+  <li>Docker (I’m using version 3.0.3), but any recent version should be fine</li>
+  <li>Jupyter Notebooks for Python coding</li>
+  <li>Scikit-Learn for data normalization</li>
+  <li>Matplotlib for visualisation</li>
+  <li>TensorFlow for linear regression machine learning algorithm</li>
+  <li>Flask for publishing the API.</li>
+</ul>
+
+<p>These libraries will all be installed into the Docker container, which will be your local development environment.  You can watch the video below to follow along with the steps.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>We will build our  model in four simple steps:</p>
+<ul>
+  <li>Step 1 - Build a TensorFlow development environment</li>
+  <li>Step 2 - Setup our Jupyter notebook</li>
+  <li>Step 3 - Build and train our machine learning model using linear regression</li>
+  <li>Step 4 - We will publish our prediction model through an API using Flask</li>
+</ul>
+
+<h2 id="requirements-and-using-the-code-from-github">Requirements and using the code from GitHub</h2>
+<p>The only thing you’ll need installed is Docker, and code can be downloaded from <a href="https://to.fiveminute.cloud/ekxWeR">GitHub</a>. On GitHub you’ll see a number of helper commands to help things run smoothly.</p>
+
+<ul>
+  <li><em>build</em> contains the command to build the Docker container from the Dockerfile.</li>
+  <li><em>run</em> contains the commands to run our container, and also display the logs.</li>
+  <li><em>cleanup</em> will stop and delete the Docker container.</li>
+  <li><em>logs</em> will show the log files of the running container.</li>
+</ul>
+
+<p>You can copy the contents of GitHub to your local machine by running the <a href="https://git-scm.com/downloads">git</a> command.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/fiveminutecloud/fmctensorflow.git
+</code></pre></div></div>
+
+<h2 id="step-1---create-the-development-environment">Step 1 - Create the development environment</h2>
+<p>Now, there are a few ways you can get a development environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example we’ll quickly make our own local environment. This helps us understand a little more about what’s going on, but is also means you can use data sets which you might not be comfortable sharing on the Cloud.</p>
+
+<p>Our Dockerfile uses the standard python 3.7 base image from DockerHub, on which we layer Jupyter Notebooks, the TensorFlow machine learning libraries and the Flask libraries to publish our API.</p>
+
+<p><strong>Dockerfile</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FROM</span> <span class="n">python</span><span class="p">:</span><span class="mf">3.7</span><span class="o">-</span><span class="n">slim</span>
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">==</span><span class="mf">0.23.2</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">jupyterlab</span><span class="o">==</span><span class="mf">2.2.9</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">matplotlib</span><span class="o">==</span><span class="mf">3.3.3</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">seaborn</span><span class="o">==</span><span class="mf">0.11.0</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.18.5</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">tensorflow</span><span class="o">==</span><span class="mf">2.3.1</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">flask</span><span class="o">==</span><span class="mf">1.1.2</span>
+<span class="n">CMD</span> <span class="p">[</span><span class="s">"jupyter-lab"</span><span class="p">,</span> <span class="s">"--ip=0.0.0.0"</span><span class="p">,</span> <span class="s">"--allow-root"</span><span class="p">,</span> <span class="s">"--notebook-dir=/notebooks"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Build the Docker container using the command</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t fmctensorflow .
+</code></pre></div></div>
+<h2 id="step-2---setup-our-jupyter-notebook">Step 2 - Setup our Jupyter Notebook</h2>
+<p>Now you have a container image, you run it with the following command. This command creates an instance of the container, and opens two ports on the container. Port 8888 is opened so you can access Jupyter Notebooks through your web browser, and port 5000 is opened for the API which we’ll create shortly.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -v $(pwd)/notebooks:/notebooks --name fmctensorflow -p 8888:8888 -p 5000:5000 fmctensorflow:latest
+docker logs -f fmctensorflow
+</code></pre></div></div>
+<p>Within the logs, you should see a line which looks something like the line below. It contains the access token for the running instance of Jupyter, so you need that. Simply copy the whole line into your browser, to access the Notebook. I recommend using the last link which starts http://127.0.0.1.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html
+    Or copy and paste one of these URLs:
+        http://046ef7394882:8888/?token=9e976aecfb63ee81434e0272b4e996c130833ee891c91434e0272b4eaea6304e976aea8
+     or http://127.0.0.1:8888/?token=e976aecfb63ee81434e0272b4e996c130833ee891c91434e0272b4eaea6304e976aea8
+</code></pre></div></div>
+<p>Now in your web browser, you should see <em>Launcher</em>. Click the Python3 logo to create a new Notebook.  You can right-click the file created on the left to rename it.</p>
+
+<p><img src="../../../assets/myimages/2021-01-12-17-39-42.png" alt="" /></p>
+
+<h2 id="step-3---build-and-train-our-model">Step 3 - Build and train our model</h2>
+<p>You can view the actual Notebook <a href="https://github.com/fiveminutecloud/fmctensorflow/blob/main/notebooks/fmctensorflow.ipynb">here</a>, but I’m going to summarize the eleven key steps below.</p>
+
+<h3 id="a-import-the-libraries">a. Import the libraries</h3>
+<p>Here we import the libraries that were layered into the Docker container during step 1. You’ll notice we’re using some libraries which we didn’t explicitly include (eg. Pandas), but we can still use them because they are part of the base Python 3.7 container.</p>
+
+<h3 id="b-retrieve-the-data-set-for-training">b. Retrieve the data set for training</h3>
+<p>The dataset we use for training is a public dataset from <a href="https://www.kaggle.com/mirichoi0218/insurance/home">Kaggle</a> with details a small sample of USA population medical insurance costs. It has 1338 records, with columns as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Age</td>
+      <td>Patient age</td>
+      <td>Numeric</td>
+    </tr>
+    <tr>
+      <td>Sex</td>
+      <td>Patient sex</td>
+      <td>Text</td>
+    </tr>
+    <tr>
+      <td>BMI</td>
+      <td>Patient body-mass index</td>
+      <td>Numeric</td>
+    </tr>
+    <tr>
+      <td>Children</td>
+      <td>Number of children</td>
+      <td>Numeric</td>
+    </tr>
+    <tr>
+      <td>Smoker</td>
+      <td>Is the patient a smoker?</td>
+      <td>Text</td>
+    </tr>
+    <tr>
+      <td>Region</td>
+      <td>Patient’s home region</td>
+      <td>Text</td>
+    </tr>
+    <tr>
+      <td>Charges</td>
+      <td>Insurance costs</td>
+      <td>Numeric</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="c-visualise-and-explore-the-data-with-matplotlib">c. Visualise and explore the data with Matplotlib</h3>
+<p>We are interested to understand the relationship between age and insurance costs. The following chart shows the distribution. Here we can see at least three linear relationships, so in the next step we’d like to understand the features that influence the insurance costs.</p>
+
+<p><img src="../../../assets/myimages/2021-01-13-13-20-06.png" alt="" /></p>
+
+<h3 id="d-map-the-textual-values-to-numerical-values">d. Map the textual values to numerical values</h3>
+<p>In order to understand the features that influence insurance costs, we need to delve deeper into the data. We’d like to look at creating a <em>correlation matrix</em> to show how the costs change, as the features change. For example, do insurance costs go up as BMI increases?  How do the costs vary by region? 
+In order to do this analysis, we use a <em>Correlation</em> function, but it only works with numeric data.  Therefore, we create three mapping functions to map Sex, Smoker and Region to numeric values, so we configure the following mappings.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Text Values</th>
+      <th>Numeric Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sex</td>
+      <td>male, female, undefined</td>
+      <td>0, 1, -1</td>
+    </tr>
+    <tr>
+      <td>Smoker</td>
+      <td>no, yes, undefined</td>
+      <td>0, 1, -1</td>
+    </tr>
+    <tr>
+      <td>Region</td>
+      <td>southwest,southeast,northwest,northeast</td>
+      <td>1, 2, 3, 4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="e-look-at-the-correlation-between-data-items-with-pandas-and-seaborn">e. Look at the <em>correlation</em> between data items with Pandas and SeaBorn</h3>
+<p>We use <em>Pandas</em> to first create the Correlation matrix, and then we use <em>SeaBorn</em> to visualise the matrix to see the hotspots. From the charts below, we see the factors influencing the insurance costs are smoker, and then age.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img src="../../../assets/myimages/2021-01-13-13-41-01.png" alt="" /></td>
+      <td><img src="../../../assets/myimages/Sex.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="f-separate-the-smokers-from-the-nonsmokers">f. Separate the Smokers from the Nonsmokers</h3>
+<p>Since Smokers is a ‘yes/no’ value, in the next step we split the source data into Smokers and Nonsmokers so we can see the different trends. In the image below we can see the split of smokers and nonsmokers. We can see at least 3 linear relationships. We can see two for smokers (in grey), and a good linear relationship for nonsmokers (in blue) but with a sizable set of anomalies. So, for the rest of this demo we’ll focus on the nonsmokers only.</p>
+
+<p><img src="../../../assets/myimages/2021-01-13-13-48-36.png" alt="" /></p>
+
+<h3 id="g-look-at-the-correlation-between-features-for-only-nonsmokers">g. Look at the correlation between features for only Nonsmokers</h3>
+<p>Now, we re-run the Correlation function for nonsmokers only, and we discover that age (unsurprisingly!) becomes the most significant factor in insurance charges.</p>
+
+<p><img src="../../../assets/myimages/2021-01-13-13-54-06.png" alt="" /></p>
+
+<h3 id="h-normalize-the-input-values-with-scikit-learn">h. Normalize the input values with Scikit-Learn</h3>
+<p>We now need to prepare the data for training.  It is best practice to normalize the input values, and we do this by creating a <em>scaler</em>.  The scaler is a function that condenses the input dataset (age) down to a unit range (between 0-1). If you don’t do this, you may find your modeling fit <a href="https://machinelearningmastery.com/exploding-gradients-in-neural-networks/"><em>explodes</em></a>. You don’t need to normalize the output values (costs).</p>
+
+<p><img src="../../../assets/myimages/2021-01-13-13-56-33.png" alt="" /></p>
+
+<h3 id="i-split-the-data-into-a-training-and-testing-dataset">i. Split the data into a training and testing dataset</h3>
+<p>There is one last thing needed before training the model. In step 3b, I noted we have 1338 records in our data set, of which 1064 are nonsmokers. We want to use most of the data for training the model. But, we also want to hold back some data so we can test the model afterwards and compare the predicted result with the actual result already known.  This helps us understand the accuracy of our model. We decide to train the model on 1010 (95%) nonsmokers, and hold back 54 records for testing later.</p>
+
+<h3 id="j-train-the-model-with-tensorflow">j. Train the model with TensorFlow</h3>
+<p>Finally! Eleven steps later, we can train our model with TensorFlow. TensorFlow works by creating <em>models</em> and <em>layers</em>. Models are made up of layers, and layers are the <em>functions</em> containing the mathematical function. The power of TensorFlow allows you to build complex networks with multiple layers leading to very sophisticated prediction models. We will only create one <a href="https://keras.io">Keras</a> layer.  The model fitting process is essentially is random.  And if you run the fitting process multiple times, you’re likely to get different results, unless you set the <a href="https://machinelearningmastery.com/reproducible-results-neural-networks-keras/">seed</a>. Fitting basically selects a random position, and tests the training data against it.  It uses <em>Optimizers</em> to determine the accuracy (or ‘loss’) of the prediction against the known outcome and adjusts the random position accordingly.  It’s like guessing a number between 1 and 100. You guess 50, I say lower. You guess 25, I say higher. Eventually you guess correctly. Sometimes you get lucky and it only takes a few guesses, other times it takes longer.  Each guess is called an <em>Epoch</em>, and the more guesses you have the longer it takes, and the better the result.</p>
+
+<h3 id="k-test-the-model-with-the-remaining-data-set">k. Test the model with the remaining data set</h3>
+<p>www</p>
+
+<h2 id="step-4---deploy-the-model-as-an-api-with-flask">Step 4 - Deploy the model as an API with Flask</h2>
+<p>Start the Flask server which uses the model created in step 3 above.
+When the container was started above in step 2, we opened port 5000 so we can access the Flask API though our web browser. 
+Takes the input value and uses the <em>same</em> scaler to normalize the age to the range we trained the model with.</p>
+
+<p><img src="../../../assets/myimages/2021-01-12-18-32-30.png" alt="" /></p>
+
+<h2 id="if-you-run-into-problems">If you run into problems</h2>
+<p>I like running in a isolated container because you can hit <em>reset</em> if you run into difficulties.
+Restart the container with clean up
+Post in the comments below.</p>
+
+:ET

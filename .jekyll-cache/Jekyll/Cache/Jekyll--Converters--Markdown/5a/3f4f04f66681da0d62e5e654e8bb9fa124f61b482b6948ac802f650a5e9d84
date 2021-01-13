@@ -1,0 +1,17 @@
+I"�<p>I speak to a lot of people about AI. About the possibilities, the limitations and the tools available. The conversation usually goes something like this.</p>
+
+<p><em>Hey,  I’ve got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT.</em></p>
+
+<p><em>Great idea, have you got some data we can use to create a model?</em></p>
+
+<p><em>Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow.</em></p>
+
+<p><em>What format is the data in? Is it AI-Ready?</em></p>
+
+<p><em>Eh, what? I’m sure we can just clean it up.</em></p>
+
+<p>There’s that word again.  Just.  The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with <a href="https://to.fiveminute.cloud/1r2xMz">TensorFlow</a>, Google’s open source software library for machine learning. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.</p>
+
+<p>ededed</p>
+
+:ET

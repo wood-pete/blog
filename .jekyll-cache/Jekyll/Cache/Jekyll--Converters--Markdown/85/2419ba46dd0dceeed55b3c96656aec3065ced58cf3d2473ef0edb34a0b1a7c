@@ -1,0 +1,28 @@
+I"�<p>I speak to a lot of people about AI.  A lot of people.  The conversation usually goes something like this.</p>
+
+<p>‘Hey,  I’ve got a cool idea, we should use AI to look for INSERT FUNKY INSIGHT’</p>
+
+<p>‘Great idea, have you got some data we can train’</p>
+
+<p>‘Sure! My mate at INSERT FUNKY BUSINESS has some data we can borrow’</p>
+
+<p>‘What format is the data in? Is it AI-Ready?’</p>
+
+<p>‘Eh, what? I’m sure we can just clean it up’</p>
+
+<p>There’s that word again.  Just.  The single word that glosses over reality, and simplifies the world. Just.  It’s the word that I despise the most. 
+I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain insights into Machine learning with <a href="https://www.tensorflow.org">TensorFlow</a> I decided to explore the steps that it takes to go from zero to a fully trained published model. We will build our  model in four simple steps:</p>
+<ul>
+  <li>Step 1 - Build a TensorFlow development environment</li>
+  <li>Step 2 - Setup our Jupyter notebook</li>
+  <li>Step 3 - Build and train our machine learning model using linear regression</li>
+  <li>Step 4 - We will publish our prediction model through an API using Flask</li>
+</ul>
+
+<p>The only thing you’ll need installed is Docker, and code can be downloaded from <a href="https://github.com/fiveminutecloud/tensorflowdemo">GitHub</a>.</p>
+
+<!--more-->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+:ET

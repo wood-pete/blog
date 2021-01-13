@@ -1,0 +1,18 @@
+I"�<p>In this 5 minute video, I explore how to create a cost of care prediction model and insights into Machine learning with Tensorflow.</p>
+
+<p>We will build our  model in four simple steps:</p>
+<ul>
+  <li>Step 1 - Build a TensorFlow development environment</li>
+  <li>Step 2 - Setup our Jupyter notebook</li>
+  <li>Step 3 - Build and train our machine learning model using linear regression</li>
+  <li>Step 4 - We will publish our prediction model through an API using Flask</li>
+</ul>
+
+<p>The only thing you’ll need installed is Docker.</p>
+
+<p>And you can download the code from Github by
+following the link to the side</p>
+
+<p>With that, lets get started…</p>
+
+:ET

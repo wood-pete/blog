@@ -1,0 +1,67 @@
+I"�<p>I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. The conversation usually goes something like this.</p>
+
+<p><em>Hey,  I’ve got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT.</em></p>
+
+<p><em>Great idea, have you got some data we can use to create a model?</em></p>
+
+<p><em>Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow.</em></p>
+
+<p><em>What format is the data in? Is it AI-ready?</em></p>
+
+<p><em>Eh, what? I’m sure we can just build a model with it.</em></p>
+
+<p>There’s that word again.  Just.  The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with <a href="https://to.fiveminute.cloud/1r2xMz">TensorFlow</a>, Google’s open source software library for machine learning. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.</p>
+
+<!--more-->
+
+<h2 id="ingredients-you-will-use">Ingredients you will use:</h2>
+<ul>
+  <li>Docker (I’m using version 3.0.3), but any recent version should be fine</li>
+  <li>Jupyter Notebooks for Python coding</li>
+  <li>Scikit-Learn for data normalization</li>
+  <li>Matplotlib for visualisation</li>
+  <li>TensorFlow for linear regression machine learning algorithm</li>
+  <li>Flask for publishing the API.</li>
+</ul>
+
+<p>These libraries will all be installed into the Docker container, which will be your local development environment.  You can watch the video below to follow along with the steps.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>We will build our  model in four simple steps:</p>
+<ul>
+  <li>Step 1 - Build a TensorFlow development environment</li>
+  <li>Step 2 - Setup our Jupyter notebook</li>
+  <li>Step 3 - Build and train our machine learning model using linear regression</li>
+  <li>Step 4 - We will publish our prediction model through an API using Flask</li>
+</ul>
+
+<h2 id="using-the-code-from-github">Using the code from GitHub</h2>
+<p>The only thing you’ll need installed is Docker, and code can be downloaded from <a href="https://to.fiveminute.cloud/ekxWeR">GitHub</a>. On GitHub you’ll see a number of helper commands to help things run smoothly.</p>
+
+<ul>
+  <li><em>build</em> contains the command to build the Docker container from the Dockerfile.</li>
+  <li><em>run</em> contains the commands to run our container, and also display the logs.</li>
+  <li><em>cleanup</em> will stop and delete the Docker container.</li>
+  <li><em>logs</em> will show the log files of the running container.</li>
+</ul>
+
+<h2 id="step-1---creating-the-development-environment">Step 1 - Creating the development environment</h2>
+<p>Now, there are a few ways you can get a development environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example we’ll quickly make our own local environment. This helps us understand a little more about what’s going on, but is also means you can use data sets which you might not be comfortable sharing on the Cloud.</p>
+
+<p>Our Dockerfile uses the standard python 3.7 base image from DockerHub, on which we layer Jupyter Notebooks, the TensorFlow machine learning libraries and the Flask libraries to publish our API.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FROM</span> <span class="n">python</span><span class="p">:</span><span class="mf">3.7</span><span class="o">-</span><span class="n">slim</span>
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">==</span><span class="mf">0.23.2</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">jupyterlab</span><span class="o">==</span><span class="mf">2.2.9</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">matplotlib</span><span class="o">==</span><span class="mf">3.3.3</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">seaborn</span><span class="o">==</span><span class="mf">0.11.0</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.18.5</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">tensorflow</span><span class="o">==</span><span class="mf">2.3.1</span>
+<span class="n">RUN</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">flask</span><span class="o">==</span><span class="mf">1.1.2</span>
+<span class="n">CMD</span> <span class="p">[</span><span class="s">"jupyter-lab"</span><span class="p">,</span> <span class="s">"--ip=0.0.0.0"</span><span class="p">,</span> <span class="s">"--allow-root"</span><span class="p">,</span> <span class="s">"--notebook-dir=/notebooks"</span><span class="p">]</span>
+</code></pre></div></div>
+<p class="note"><strong>Dockerfile</strong></p>
+
+:ET
