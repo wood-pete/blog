@@ -24,7 +24,7 @@ These libraries will all be installed into the Docker container, which will be a
 - Step 1 - Build a TensorFlow sandpit environment
 - Step 2 - Setup the Jupyter notebook
 - Step 3 - Build and train the machine learning model using linear regression
-- Step 4 - We will publish the prediction model through an API using Flask
+- Step 4 - Publish the prediction model through an API using Flask
 
 ## Requirements and using the code from GitHub
 If you're following along, the only thing you'll need installed is Docker, and code can be downloaded from [GitHub][2]. On GitHub you'll see a number of helper commands to help things run smoothly.
