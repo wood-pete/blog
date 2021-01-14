@@ -12,7 +12,7 @@ I speak to a lot of people about AI. About the possibilities for healthcare, the
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Hello World with TensorFlow
-This adventure is very much a simple 'Hello World' example with TensorFlow and Python. I'll use the following open source tools and you can read more about each of them by following the links:
+This adventure is a simple 'Hello World' example with TensorFlow and Python. I'll use the following open source tools and you can read more about each of them by following the links:
 - [Docker][11] for the sandpit environment. I'm using version 3.0.3, but any recent version should be fine.
 - [Jupyter Lab][12] for Python coding
 - [Scikit-Learn][13] for data normalization
