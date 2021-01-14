@@ -8,9 +8,8 @@ I speak to a lot of people about AI. About the possibilities for healthcare, the
 
 <!--more-->
 
-<br/><br/>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Ingredients
 During this investigation, I'll use the following tools:
@@ -21,14 +20,14 @@ During this investigation, I'll use the following tools:
 - TensorFlow for linear regression machine learning algorithm
 - Flask for publishing the API.
 
-These libraries will all be installed into the Docker container, which will be your quick sandpit environment.  We will build our  model in four simple steps:
+These libraries will all be installed into the Docker container, which will be a quick sandpit environment.  We will build our  model in four simple steps:
 - Step 1 - Build a TensorFlow sandpit environment
 - Step 2 - Setup our Jupyter notebook
 - Step 3 - Build and train our machine learning model using linear regression
 - Step 4 - We will publish our prediction model through an API using Flask
 
 ## Requirements and using the code from GitHub
-The only thing you'll need installed is Docker, and code can be downloaded from [GitHub][2]. On GitHub you'll see a number of helper commands to help things run smoothly.
+If you're following along, the only thing you'll need installed is Docker, and code can be downloaded from [GitHub][2]. On GitHub you'll see a number of helper commands to help things run smoothly.
 
 - *build* contains the command to build the Docker container from the [Dockerfile][10].
 - *run* contains the commands to run our container, and also display the logs.

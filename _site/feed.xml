@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-14T10:33:02+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">5 Minute Cloud</title><subtitle>Healthcare Cloud Technology
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-01-14T10:36:32+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">5 Minute Cloud</title><subtitle>Healthcare Cloud Technology
 </subtitle><author><name>Pete Wood</name><email>pete@fiveminute.cloud</email></author><entry><title type="html">Creating a Cost of Care prediction with TensorFlow</title><link href="http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow.html" rel="alternate" type="text/html" title="Creating a Cost of Care prediction with TensorFlow" /><published>2021-01-11T00:00:00+00:00</published><updated>2021-01-11T00:00:00+00:00</updated><id>http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow</id><content type="html" xml:base="http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow.html">&lt;p&gt;I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple ‘cost of care’ prediction model and gain experience with &lt;a href=&quot;https://to.fiveminute.cloud/1r2xMz&quot;&gt;TensorFlow&lt;/a&gt;, Google’s open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I’ll show you the steps I had to take to create a blueprint for further investigation.&lt;/p&gt;
 
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6Zinxztsy5c&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/6Zinxztsy5c&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&quot;ingredients&quot;&gt;Ingredients&lt;/h2&gt;
 &lt;p&gt;During this investigation, I’ll use the following tools:&lt;/p&gt;
@@ -18,7 +17,7 @@
   &lt;li&gt;Flask for publishing the API.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;These libraries will all be installed into the Docker container, which will be your quick sandpit environment.  We will build our  model in four simple steps:&lt;/p&gt;
+&lt;p&gt;These libraries will all be installed into the Docker container, which will be a quick sandpit environment.  We will build our  model in four simple steps:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Step 1 - Build a TensorFlow sandpit environment&lt;/li&gt;
   &lt;li&gt;Step 2 - Setup our Jupyter notebook&lt;/li&gt;
@@ -27,7 +26,7 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;requirements-and-using-the-code-from-github&quot;&gt;Requirements and using the code from GitHub&lt;/h2&gt;
-&lt;p&gt;The only thing you’ll need installed is Docker, and code can be downloaded from &lt;a href=&quot;https://to.fiveminute.cloud/ekxWeR&quot;&gt;GitHub&lt;/a&gt;. On GitHub you’ll see a number of helper commands to help things run smoothly.&lt;/p&gt;
+&lt;p&gt;If you’re following along, the only thing you’ll need installed is Docker, and code can be downloaded from &lt;a href=&quot;https://to.fiveminute.cloud/ekxWeR&quot;&gt;GitHub&lt;/a&gt;. On GitHub you’ll see a number of helper commands to help things run smoothly.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;build&lt;/em&gt; contains the command to build the Docker container from the &lt;a href=&quot;https://github.com/fiveminutecloud/fmctensorflow/blob/main/Dockerfile&quot;&gt;Dockerfile&lt;/a&gt;.&lt;/li&gt;
