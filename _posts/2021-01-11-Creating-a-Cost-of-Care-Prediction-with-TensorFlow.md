@@ -4,23 +4,16 @@ title: "Creating a Cost of Care prediction with TensorFlow"
 tags: [healthcare, cloud]
 ---
 
-I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. The conversation usually goes something like this.  
-
-*Hey,  I've got a cool idea, we should use AI to look for INSERT FUNKY CLINICAL INSIGHT.*
-
-*Great idea, have you got some data we can use to create a model?*
-
-*Sure! I know at guy at INSERT FUNKY BUSINESS with some data we can borrow.*
-
-*What format is the data in? Is it AI-ready?*
-
-*Eh, what? I'm sure we can just build a model with it.*
-
-There's that word again.  Just.  The single word that glosses over reality, and simplifies the World. Just. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple 'cost of care' prediction model and gain experience with [TensorFlow][1], Google's open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I'll show you the steps I had to take to create a blueprint for further investigation.
+I speak to a lot of people about AI. About the possibilities for healthcare, the limitations, the tools, and how the Cloud providers help us quickly build models. I decided to explore what it takes to build, train and publish a simple AI model from some fairly raw data. In this 5 minute video, I explore how to create a simple 'cost of care' prediction model and gain experience with [TensorFlow][1], Google's open source software library for machine learning with particular focus on training of deep neural networks. I decided to explore the steps that it takes to go from zero to a fully trained published model. In this 5 minute video I'll show you the steps I had to take to create a blueprint for further investigation.
 
 <!--more-->
 
+<br/><br/>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br/>
+
 ## Ingredients
+During this investigation, I'll use the following tools:
 - Docker (I'm using version 3.0.3), but any recent version should be fine
 - Jupyter Notebooks for Python coding
 - Scikit-Learn for data normalization
@@ -28,11 +21,7 @@ There's that word again.  Just.  The single word that glosses over reality, and 
 - TensorFlow for linear regression machine learning algorithm
 - Flask for publishing the API.
 
-These libraries will all be installed into the Docker container, which will be your local development environment.  You can watch the video below to follow along with the steps.
-<br/><br/>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6Zinxztsy5c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br/>
-We will build our  model in four simple steps:
+These libraries will all be installed into the Docker container, which will be your quick sandpit environment.  We will build our  model in four simple steps:
 - Step 1 - Build a TensorFlow sandpit environment
 - Step 2 - Setup our Jupyter notebook
 - Step 3 - Build and train our machine learning model using linear regression
