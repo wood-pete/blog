@@ -38,7 +38,7 @@ You can copy the contents of GitHub to your local machine by running the [git][3
 ```
 git clone https://github.com/fiveminutecloud/fmctensorflow.git
 ```
-or you can simply download the [zip file][18].
+You can also simply download the [zip file][18].
 
 ## Step 1 - Create the sandpit environment
 Now, there are a few ways you can get a sandpit environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example i'll quickly make my own local environment. This helps  understand a little more about what's going on, but is also means I can use data sets which I might not be comfortable with sharing on the Cloud.
