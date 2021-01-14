@@ -40,7 +40,7 @@ git clone https://github.com/fiveminutecloud/fmctensorflow.git
 ```
 
 ## Step 1 - Create the sandpit environment
-Now, there are a few ways you can get a sandpit environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this adventure i'll quickly make my own local environment. This helps  understand a little more about what's going on, but is also means I can use data sets which I might not be comfortable with sharing on the Cloud.
+Now, there are a few ways you can get a sandpit environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example i'll quickly make my own local environment. This helps  understand a little more about what's going on, but is also means I can use data sets which I might not be comfortable with sharing on the Cloud.
 
 My Dockerfile uses the standard python 3.7 base image from DockerHub, on which I layer Jupyter Lab, the TensorFlow machine learning libraries and the Flask libraries to publish the API.
 
