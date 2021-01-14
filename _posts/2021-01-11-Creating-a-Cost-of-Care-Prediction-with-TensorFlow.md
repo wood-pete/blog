@@ -26,7 +26,7 @@ These libraries will all be installed into the Docker container, which will be a
 - Step 3 - Build and train the machine learning model using linear regression
 - Step 4 - Publish the prediction model through an API using Flask
 
-## Requirements and using the code from GitHub
+## Using the example from GitHub
 If you're following along, the only thing you'll need installed is Docker, and code can be downloaded from [GitHub][2]. On GitHub you'll see a number of helper commands to help things run smoothly.
 
 - *build* contains the command to build the Docker container from the [Dockerfile][10].
@@ -38,6 +38,7 @@ You can copy the contents of GitHub to your local machine by running the [git][3
 ```
 git clone https://github.com/fiveminutecloud/fmctensorflow.git
 ```
+or you can simply download the [zip file][18].
 
 ## Step 1 - Create the sandpit environment
 Now, there are a few ways you can get a sandpit environment.  You can use something like AWS SageMaker, Azure Machine Learning, or Google Colab, but for this example i'll quickly make my own local environment. This helps  understand a little more about what's going on, but is also means I can use data sets which I might not be comfortable with sharing on the Cloud.
@@ -84,7 +85,7 @@ Now in the web browser, I see *Launcher* and click the Python3 logo to create a 
 You can view the actual Notebook [here][4], but I'm going to summarize the eleven key steps below.
 
 ### a. Import the libraries
-Here I import the libraries that were layered into the Docker container during step 1. You'll notice I'm using some libraries which I didn't explicitly include (eg. Pandas), but we can still use them because they are part of the base Python 3.7 container.
+Here I import the libraries that were layered into the Docker container during step 1. You'll notice I'm using some libraries which I didn't explicitly include (eg. Pandas), but I can still use them because they are part of the base Python 3.7 container.
 
 ### b. Retrieve the data set for training
 The dataset I use for training is a public dataset from [Kaggle][5] with a small sample of USA population medical insurance costs. It has 1338 records, with columns as follows:
@@ -106,7 +107,7 @@ I am interested to understand the relationship between age and insurance costs. 
 ![](../../../assets/myimages/2021-01-13-13-20-06.png)
 
 ### d. Map the textual values to numerical values
-In order to understand the features that influence insurance costs, I need to delve deeper into the data. We'd like to look at creating a *correlation matrix* to show how the costs change, as the features change. For example, do insurance costs go up as BMI increases?  How do the costs vary by region? 
+In order to understand the features that influence insurance costs, I need to delve deeper into the data. I'd like to look at creating a *correlation matrix* to show how the costs change, as the features change. For example, do insurance costs go up as BMI increases?  How do the costs vary by region? 
 In order to do this analysis, I use a *Correlation* function, but it only works with numeric data.  Therefore, I create three mapping functions to map Sex, Smoker and Region to numeric values, so I configure the following mappings. 
 <br/><br/>
 
@@ -134,16 +135,16 @@ Now, I re-run the Correlation function for nonsmokers only, and discover that ag
 ![](../../../assets/myimages/2021-01-13-13-54-06.png)
 
 ### h. Normalize the input values with Scikit-Learn
-I now need to prepare the data for training.  It is best practice to normalize the input values, and I do this by creating a *scaler*.  The scaler is a function that condenses the input dataset (age) down to a unit range (between 0-1). If you don't do this, you may find your modeling fit [*explodes*][6]. You don't need to normalize the output values (costs).
+I now need to prepare the data for training.  It is best practice to normalize the input values, and I do this by creating a *scaler*.  The scaler is a function that condenses the input dataset (age) down to a unit range (between 0-1). If you don't do this, you may find the modeling fit [*explodes*][6]. You don't need to normalize the output values (costs).
 <br/><br/>
 ![](../../../assets/myimages/2021-01-13-13-56-33.png)
 
 
 ### i. Split the data into a training and testing dataset
-There is one last thing needed before training the model. In step 3b, I noted we have 1338 records in our data set, of which 1064 are nonsmokers. I want to use most of the data for training the model. But, I also want to hold back some data so we can test the model afterwards and compare the predicted result with the actual result already known.  This helps understand the accuracy of our model. I decide to train the model on 1010 (95%) nonsmokers, and hold back 54 records for testing later. 
+There is one last thing needed before training the model. In step 3b, I noted 1338 records in the data set, of which 1064 are nonsmokers. I want to use most of the data for training the model. But, I also want to hold back some data so I can test the model afterwards and compare the predicted result with the actual result already known.  This helps understand the accuracy of the model. I decide to train the model on 1010 (95%) nonsmokers, and hold back 54 records for testing later. 
 
 ### j. Train the model with TensorFlow
-*Finally!* Eleven steps later, I can train our model with TensorFlow. TensorFlow works by creating *models* and *layers*. Models are made up of layers, and layers are the *functions* containing the mathematical function. The power of TensorFlow allows you to build complex networks with multiple layers leading to very sophisticated prediction models. We will only create one [Keras][7] layer.  The model fitting process is essentially *random*.  And if you run the fitting process multiple times, you'll get different results, unless you set the [seed][8] for the random number generator. Fitting basically selects a random position, and tests the training data against it.  It uses *Optimizers* to determine the accuracy (or 'loss') of the prediction against the known outcome in the training set and adjusts the random position accordingly.  It's like guessing a number between 1 and 100. You guess 50, I say lower. You guess 25, I say higher. Eventually you guess correctly. Sometimes you get lucky and it only takes a few guesses, other times it takes longer.  Each guess is called an *Epoch*, and the more guesses you have the longer it takes, and the better the result. I'm using just 1000 epochs here. I'm only using 1064 records to train our model, and it works just fine locally. But what if you have millions, or billions of records. Well, TensorFlow scales crazy-well, and lots of the cloud providers, but especially [Google Cloud AI][9] support TensorFlow at scale. All this work allows us to run just three commands to train the model.
+*Finally!* Eleven steps later, I can train the model with TensorFlow. TensorFlow works by creating *models* and *layers*. Models are made up of layers, and layers are the *functions* containing the mathematical magic. The power of TensorFlow allows you to build complex networks with multiple layers leading to very sophisticated prediction models. I will only create one [Keras][7] layer.  The model fitting process is essentially *random*.  And if you run the fitting process multiple times, you'll get different results, unless you set the [seed][8] for the random number generator. Fitting basically selects a random position, and tests the training data against it.  It uses *Optimizers* to determine the accuracy (or 'loss') of the prediction against the known outcome in the training set and adjusts the random position accordingly.  It's like guessing a number between 1 and 100. You guess 50, I say lower. You guess 25, I say higher. Eventually you guess correctly. Sometimes you get lucky and it only takes a few guesses, other times it takes longer.  Each guess is called an *Epoch*, and the more guesses you have the longer it takes, and the better the result. I'm using just 1000 epochs here. I'm only using 1064 records to train our model, and it works just fine locally. But what if you have millions, or billions of records. Well, TensorFlow scales crazy-well, and lots of the cloud providers, but especially [Google Cloud AI][9] support TensorFlow at scale. All this work allows me to run just three commands to train the model.
 
 ``` python
 model = tf.keras.Sequential([keras.layers.Dense(units=1, input_shape=[1])])
@@ -161,7 +162,7 @@ You may also notice that the *age* axis is still normalized because my model was
 ![](../../../assets/myimages/2021-01-13-15-53-41.png)
 
 ## Step 4 - Deploy the model as an API with Flask
-I use the in-memory model created above, and create a web API around it so it can be used by mobile and web apps. I use Flask to create the API infrastructure, with one simple GET endpoint *predict*, that takes *age* as a single input value. When the container was started above in step 2, I opened port 5000 so we can access the Flask API though our web browser. I can now access the insurance cost predictor through one simple endpoint.
+I use the in-memory model created above, and create a web API around it so it can be used by mobile and web apps. I use Flask to create the API infrastructure, with one simple GET endpoint *predict*, that takes *age* as a single input value. When the container was started above in step 2, I opened port 5000 so we can access the Flask API though the web browser. I can now access the insurance cost predictor through one simple endpoint.
 ```
 http://localhost:5000/predict?age=45
 ```
@@ -180,7 +181,7 @@ I then pass the *normalized* age to the model predictor and return the insurance
 
 
 ## If you run into problems
-I like testing ideas in a isolated container because it provides a nice clean working space with known dependencies. If you're following along with this 'Hello World' example and you run into difficulties, you can simply hit *reset* and start again from a known state. The container can be restarted by running the *cleanup* commands:
+I like testing examples in an isolated container because it provides a nice clean workspace with known dependencies. If you're following along with this 'Hello World' example and you run into difficulties, you can simply hit *reset* and start again from a known state. The container can be restarted by running the *cleanup* commands:
 ``` bash
 docker kill fmctensorflow
 docker rm fmctensorflow
@@ -206,5 +207,6 @@ If you have any other difficulties, please comment below.
 [15]: https://seaborn.pydata.org
 [16]: https://www.tensorflow.org
 [17]: https://flask.palletsprojects.com/en/1.1.x/
+[18]: https://github.com/fiveminutecloud/fmctensorflow/archive/main.zip
 
 
