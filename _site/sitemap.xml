@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/2021/01/04/Five-Healthcare-Predictions-for-2021.html</loc>
+<lastmod>2021-01-04T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2021/01/11/Creating-a-Cost-of-Care-Prediction-with-TensorFlow.html</loc>
+<lastmod>2021-01-11T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/disclaimer/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/assets/logo.pdf</loc>
+<lastmod>2020-12-26T19:42:31+00:00</lastmod>
+</url>
+</urlset>
